@@ -89,4 +89,9 @@ SD12sadasas
   } catch (error) {
     console.error("Ошибка при получении баланса токенов:", error.message);
   }
+}onsole.log(`Баланс токенов на кошельке ${walletAddress}: ${formattedBalance}`);
+return formattedBalance;
+} catch (error) {
+console.error("Ошибка при получении баланса токенов:", error.message);
+}
 }
