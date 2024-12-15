@@ -44,12 +44,6 @@ async function getTokenBalance(tokenAddress, walletAddress) {
 getTokenBalance(tokenAddress, walletAddress);
 
 
-#123213asd2
-
-#123213asd2
-
-#123213asd2
-
 123213asd2
 
 123213asd2
@@ -57,3 +51,13 @@ getTokenBalance(tokenAddress, walletAddress);
 123213asd2
 
 123213asd2
+
+123213asd2
+
+123213asd2
+
+123213asd2
+// Вызов функции
+getTokenBalance(tokenAddress, walletAddress);
+
+SD12sadasas
