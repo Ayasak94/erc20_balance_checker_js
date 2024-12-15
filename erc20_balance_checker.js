@@ -192,3 +192,8 @@ return formattedBalance;
 console.error("Ошибка при получении баланса токенов:", error.message);
 }
 }git status
+return formattedBalance;
+} catch (error) {
+console.error("Ошибка при получении баланса токенов:", error.message);
+}
+}git status
