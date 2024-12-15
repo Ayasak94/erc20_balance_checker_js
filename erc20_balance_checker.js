@@ -71,3 +71,22 @@ SD12sadasas
     console.error("Ошибка при получении баланса токенов:", error.message);
   }
 }
+123213asd2
+
+123213asd2
+
+123213asd2
+// Вызов функции
+getTokenBalance(tokenAddress, walletAddress);
+
+SD12sadasas
+
+    // Форматирование баланса
+    const formattedBalance = ethers.formatUnits(balance, decimals);
+
+    console.log(`Баланс токенов на кошельке ${walletAddress}: ${formattedBalance}`);
+    return formattedBalance;
+  } catch (error) {
+    console.error("Ошибка при получении баланса токенов:", error.message);
+  }
+}
