@@ -1,4 +1,3 @@
-
 const { ethers } = require("ethers");
 
 // Настройка провайдера
@@ -12,18 +11,37 @@ const abi = [
   "function decimals() view returns (uint8)"
 ];
 
-(async () => {
+async function getTokenBalance(tokenAddress, walletAddress) {
   try {
+    // Проверка входных данных
+    if (!ethers.isAddress(tokenAddress)) {
+      throw new Error("Указан некорректный адрес контракта токена.");
+    }
+    if (!ethers.isAddress(walletAddress)) {
+      throw new Error("Указан некорректный адрес кошелька.");
+    }
+
     // Создание экземпляра контракта
     const tokenContract = new ethers.Contract(tokenAddress, abi, provider);
 
-    // Получение данных
-    const balance = await tokenContract.balanceOf(walletAddress);
-    const decimals = await tokenContract.decimals();
+    // Получение баланса и количества десятичных знаков
+    const [balance, decimals] = await Promise.all([
+      tokenContract.balanceOf(walletAddress),
+      tokenContract.decimals()
+    ]);
+
+    // Форматирование баланса
     const formattedBalance = ethers.formatUnits(balance, decimals);
 
-    console.log(`Баланс токенов: ${formattedBalance}`);
+    console.log(`Баланс токенов на кошельке ${walletAddress}: ${formattedBalance}`);
+    return formattedBalance;
   } catch (error) {
-    console.error("Ошибка:", error);
+    console.error("Ошибка при получении баланса токенов:", error.message);
   }
-})();
+}
+
+// Вызов функции
+getTokenBalance(tokenAddress, walletAddress);
+
+
+#123213asd2
